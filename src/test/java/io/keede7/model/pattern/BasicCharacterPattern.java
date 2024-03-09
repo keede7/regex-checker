@@ -28,4 +28,8 @@ public final class BasicCharacterPattern {
                 .append("$")
                 .toString();
     }
+
+    public static boolean isCheck(Pattern pattern, String input) {
+        return pattern.matcher(input).matches();
+    }
 }

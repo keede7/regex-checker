@@ -26,29 +26,19 @@ public class BasicCharacterPatternTests {
         assertAll(
                 () -> {
                     assertTrue(
-                            ONLY_CHARACTER_PATTERN
-                                    .matcher(successModel1)
-                                    .matches()
+                            isCheck(ONLY_CHARACTER_PATTERN, successModel1)
                     );
                     assertTrue(
-                            ONLY_CHARACTER_PATTERN
-                                    .matcher(successModel2)
-                                    .matches()
+                            isCheck(ONLY_CHARACTER_PATTERN, successModel2)
                     );
                     assertFalse(
-                            ONLY_CHARACTER_PATTERN
-                                    .matcher(failModel1)
-                                    .matches()
+                            isCheck(ONLY_CHARACTER_PATTERN, failModel1)
                     );
                     assertFalse(
-                            ONLY_CHARACTER_PATTERN
-                                    .matcher(failModel2)
-                                    .matches()
+                            isCheck(ONLY_CHARACTER_PATTERN, failModel2)
                     );
                     assertFalse(
-                            ONLY_CHARACTER_PATTERN
-                                    .matcher(failModel3)
-                                    .matches()
+                            isCheck(ONLY_CHARACTER_PATTERN, failModel3)
                     );
                 }
         );
@@ -66,24 +56,16 @@ public class BasicCharacterPatternTests {
         assertAll(
                 () -> {
                     assertTrue(
-                            NOT_ONLY_CHARACTER_PATTERN
-                                    .matcher(successModel1)
-                                    .matches()
+                            isCheck(NOT_ONLY_CHARACTER_PATTERN, successModel1)
                     );
                     assertTrue(
-                            NOT_ONLY_CHARACTER_PATTERN
-                                    .matcher(successModel2)
-                                    .matches()
+                            isCheck(NOT_ONLY_CHARACTER_PATTERN, successModel2)
                     );
                     assertFalse(
-                            NOT_ONLY_CHARACTER_PATTERN
-                                    .matcher(failModel1)
-                                    .matches()
+                            isCheck(NOT_ONLY_CHARACTER_PATTERN, failModel1)
                     );
                     assertFalse(
-                            NOT_ONLY_CHARACTER_PATTERN
-                                    .matcher(failModel2)
-                                    .matches()
+                            isCheck(NOT_ONLY_CHARACTER_PATTERN, failModel2)
                     );
                 }
         );
@@ -103,34 +85,22 @@ public class BasicCharacterPatternTests {
         assertAll(
                 () -> {
                     assertTrue(
-                            ONLY_NUMBER_PATTERN
-                                    .matcher(successModel1)
-                                    .matches()
+                            isCheck(ONLY_NUMBER_PATTERN, successModel1)
                     );
                     assertFalse(
-                            ONLY_NUMBER_PATTERN
-                                    .matcher(failModel1)
-                                    .matches()
+                            isCheck(ONLY_NUMBER_PATTERN, failModel1)
                     );
                     assertFalse(
-                            ONLY_NUMBER_PATTERN
-                                    .matcher(failModel2)
-                                    .matches()
+                            isCheck(ONLY_NUMBER_PATTERN, failModel2)
                     );
                     assertFalse(
-                            ONLY_NUMBER_PATTERN
-                                    .matcher(failModel3)
-                                    .matches()
+                            isCheck(ONLY_NUMBER_PATTERN, failModel3)
                     );
                     assertFalse(
-                            ONLY_NUMBER_PATTERN
-                                    .matcher(failModel4)
-                                    .matches()
+                            isCheck(ONLY_NUMBER_PATTERN, failModel4)
                     );
                     assertFalse(
-                            ONLY_NUMBER_PATTERN
-                                    .matcher(failModel5)
-                                    .matches()
+                            isCheck(ONLY_NUMBER_PATTERN, failModel5)
                     );
                 }
         );
@@ -150,34 +120,22 @@ public class BasicCharacterPatternTests {
         assertAll(
                 () -> {
                     assertTrue(
-                            NOT_ONLY_NUMBER_PATTERN
-                                    .matcher(successModel1)
-                                    .matches()
+                            isCheck(NOT_ONLY_NUMBER_PATTERN, successModel1)
                     );
                     assertTrue(
-                            NOT_ONLY_NUMBER_PATTERN
-                                    .matcher(successModel2)
-                                    .matches()
+                            isCheck(NOT_ONLY_NUMBER_PATTERN, successModel2)
                     );
                     assertTrue(
-                            NOT_ONLY_NUMBER_PATTERN
-                                    .matcher(successModel3)
-                                    .matches()
+                            isCheck(NOT_ONLY_NUMBER_PATTERN, successModel3)
                     );
                     assertFalse(
-                            NOT_ONLY_NUMBER_PATTERN
-                                    .matcher(failModel1)
-                                    .matches()
+                            isCheck(NOT_ONLY_NUMBER_PATTERN, failModel1)
                     );
                     assertFalse(
-                            NOT_ONLY_NUMBER_PATTERN
-                                    .matcher(failModel2)
-                                    .matches()
+                            isCheck(NOT_ONLY_NUMBER_PATTERN, failModel2)
                     );
                     assertFalse(
-                            NOT_ONLY_NUMBER_PATTERN
-                                    .matcher(failModel3)
-                                    .matches()
+                            isCheck(NOT_ONLY_NUMBER_PATTERN, failModel3)
                     );
                 }
         );
@@ -196,29 +154,19 @@ public class BasicCharacterPatternTests {
         assertAll(
                 () -> {
                     assertTrue(
-                            ONLY_SPACE_PATTERN
-                                    .matcher(successModel1)
-                                    .matches()
+                            isCheck(ONLY_SPACE_PATTERN, successModel1)
                     );
                     assertTrue(
-                            ONLY_SPACE_PATTERN
-                                    .matcher(successModel2)
-                                    .matches()
+                            isCheck(ONLY_SPACE_PATTERN, successModel2)
                     );
                     assertFalse(
-                            ONLY_SPACE_PATTERN
-                                    .matcher(failModel1)
-                                    .matches()
+                            isCheck(ONLY_SPACE_PATTERN, failModel1)
                     );
                     assertFalse(
-                            ONLY_SPACE_PATTERN
-                                    .matcher(failModel2)
-                                    .matches()
+                            isCheck(ONLY_SPACE_PATTERN, failModel2)
                     );
                     assertFalse(
-                            ONLY_SPACE_PATTERN
-                                    .matcher(failModel3)
-                                    .matches()
+                            isCheck(ONLY_SPACE_PATTERN, failModel3)
                     );
                 }
         );
@@ -237,29 +185,19 @@ public class BasicCharacterPatternTests {
         assertAll(
                 () -> {
                     assertTrue(
-                            NOT_ONLY_SPACE_PATTERN
-                                    .matcher(successModel1)
-                                    .matches()
+                            isCheck(NOT_ONLY_SPACE_PATTERN, successModel1)
                     );
                     assertTrue(
-                            NOT_ONLY_SPACE_PATTERN
-                                    .matcher(successModel2)
-                                    .matches()
+                            isCheck(NOT_ONLY_SPACE_PATTERN, successModel2)
                     );
                     assertTrue(
-                            NOT_ONLY_SPACE_PATTERN
-                                    .matcher(successModel3)
-                                    .matches()
+                            isCheck(NOT_ONLY_SPACE_PATTERN, successModel3)
                     );
                     assertFalse(
-                            NOT_ONLY_SPACE_PATTERN
-                                    .matcher(failModel1)
-                                    .matches()
+                            isCheck(NOT_ONLY_SPACE_PATTERN, failModel1)
                     );
                     assertFalse(
-                            NOT_ONLY_SPACE_PATTERN
-                                    .matcher(failModel2)
-                                    .matches()
+                            isCheck(NOT_ONLY_SPACE_PATTERN, failModel2)
                     );
                 }
         );
