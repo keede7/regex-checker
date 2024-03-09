@@ -10,11 +10,22 @@ import static io.keede7.model.expression.BasicCharacterExpression.*;
 */
 public final class BasicCharacterPattern {
 
-    private static final Pattern ONLY_CHARACTER_PATTERN = Pattern.compile(ONLY_CHARACTER);
-    private static final Pattern NOT_ONLY_CHARACTER_PATTERN = Pattern.compile(NOT_ONLY_CHARACTER);
-    private static final Pattern ONLY_NUMBER_PATTERN = Pattern.compile(ONLY_NUMBER);
-    private static final Pattern NOT_ONLY_NUMBER_PATTERN = Pattern.compile(NOT_ONLY_NUMBER);
-    private static final Pattern ONLY_SPACE_PATTERN = Pattern.compile(ONLY_SPACE);
-    private static final Pattern NOT_ONLY_SPACE_PATTERN = Pattern.compile(NOT_ONLY_SPACE);
+    public static final Pattern ONLY_CHARACTER_PATTERN = Pattern.compile(combine(ONLY_CHARACTER));
+    public static final Pattern NOT_ONLY_CHARACTER_PATTERN = Pattern.compile(combine(NOT_ONLY_CHARACTER));
+    public static final Pattern ONLY_NUMBER_PATTERN = Pattern.compile(combine(ONLY_NUMBER));
+    public static final Pattern NOT_ONLY_NUMBER_PATTERN = Pattern.compile(combine(NOT_ONLY_NUMBER));
+    public static final Pattern ONLY_SPACE_PATTERN = Pattern.compile(combine(ONLY_SPACE));
+    public static final Pattern NOT_ONLY_SPACE_PATTERN = Pattern.compile(combine(NOT_ONLY_SPACE));
 
+    private static String combine(String pattern) {
+        StringBuilder sb = new StringBuilder();
+
+        return sb.append("^")
+                .append("[")
+                .append(pattern)
+                .append("]")
+                .append("+")
+                .append("$")
+                .toString();
+    }
 }
