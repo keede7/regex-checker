@@ -1,17 +1,16 @@
 package io.keede7.pattern.model;
 
-import io.keede7.util.config.TestBaseRegexUtils;
+import io.keede7.util.config.BaseRegexUtils;
 
 import java.util.regex.Pattern;
 
-import static java.util.regex.Pattern.*;
+import static java.util.regex.Pattern.compile;
 
 /**
-* @author keede
-* Created on 2024/03/08
-*/
-public final class BasicCharacterPatternTestModel extends TestBaseRegexUtils {
-
+ * @author keede
+ * Created on 2024/03/15
+ */
+public final class BasicCharacterPattern extends BaseRegexUtils {
     public static final Pattern ONLY_CHARACTER_PATTERN = compile(combine(BasicCharacterExpression.ONLY_CHARACTER));
     public static final Pattern NOT_ONLY_CHARACTER_PATTERN = compile(combine(BasicCharacterExpression.NOT_ONLY_CHARACTER));
     public static final Pattern ONLY_NUMBER_PATTERN = compile(combine(BasicCharacterExpression.ONLY_NUMBER));

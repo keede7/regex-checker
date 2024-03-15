@@ -1,6 +1,6 @@
 package io.keede7.pattern;
 
-import io.keede7.util.Validator;
+import io.keede7.util.config.TestValidator;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * Created on 2024/03/09
  */
 @DisplayNameGeneration(value = DisplayNameGenerator.ReplaceUnderscores.class)
-public class BasicCharacterPatternTestModelTests extends Validator {
+public class BasicCharacterPatternTestModelTests extends TestValidator {
 
     @Test
     void onlyCharacterPatternTest() {
