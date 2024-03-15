@@ -1,12 +1,11 @@
-package io.keede7.util;
+package io.keede7.pattern;
 
+import io.keede7.util.Validator;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
 
-import java.util.regex.Pattern;
-
-import static io.keede7.model.pattern.BasicCharacterPattern.*;
+import static io.keede7.pattern.model.BasicCharacterPattern.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**

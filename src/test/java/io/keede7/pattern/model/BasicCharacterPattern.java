@@ -1,6 +1,6 @@
-package io.keede7.model.pattern;
+package io.keede7.pattern.model;
 
-import io.keede7.model.BaseRegex;
+import io.keede7.config.BaseRegex;
 
 import java.util.regex.Pattern;
 

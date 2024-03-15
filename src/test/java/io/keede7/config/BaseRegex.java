@@ -1,4 +1,4 @@
-package io.keede7.model;
+package io.keede7.config;
 
 /**
  * @author keede
