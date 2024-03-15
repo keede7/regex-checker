@@ -4,6 +4,8 @@ import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
 
+import java.util.regex.Pattern;
+
 import static io.keede7.model.pattern.BasicCharacterPattern.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * Created on 2024/03/09
  */
 @DisplayNameGeneration(value = DisplayNameGenerator.ReplaceUnderscores.class)
-public class BasicCharacterPatternTests {
+public class BasicCharacterPatternTests extends Validator {
 
     @Test
     void onlyCharacterPatternTest() {
@@ -26,19 +28,34 @@ public class BasicCharacterPatternTests {
         assertAll(
                 () -> {
                     assertTrue(
-                            isCheck(ONLY_CHARACTER_PATTERN, successModel1)
+                            isCheck(
+                                    ONLY_CHARACTER_PATTERN,
+                                    successModel1
+                            )
                     );
                     assertTrue(
-                            isCheck(ONLY_CHARACTER_PATTERN, successModel2)
+                            isCheck(
+                                    ONLY_CHARACTER_PATTERN,
+                                    successModel2
+                            )
                     );
                     assertFalse(
-                            isCheck(ONLY_CHARACTER_PATTERN, failModel1)
+                            isCheck(
+                                    ONLY_CHARACTER_PATTERN,
+                                    failModel1
+                            )
                     );
                     assertFalse(
-                            isCheck(ONLY_CHARACTER_PATTERN, failModel2)
+                            isCheck(
+                                    ONLY_CHARACTER_PATTERN,
+                                    failModel2
+                            )
                     );
                     assertFalse(
-                            isCheck(ONLY_CHARACTER_PATTERN, failModel3)
+                            isCheck(
+                                    ONLY_CHARACTER_PATTERN,
+                                    failModel3
+                            )
                     );
                 }
         );
@@ -56,16 +73,28 @@ public class BasicCharacterPatternTests {
         assertAll(
                 () -> {
                     assertTrue(
-                            isCheck(NOT_ONLY_CHARACTER_PATTERN, successModel1)
+                            isCheck(
+                                    NOT_ONLY_CHARACTER_PATTERN,
+                                    successModel1
+                            )
                     );
                     assertTrue(
-                            isCheck(NOT_ONLY_CHARACTER_PATTERN, successModel2)
+                            isCheck(
+                                    NOT_ONLY_CHARACTER_PATTERN,
+                                    successModel2
+                            )
                     );
                     assertFalse(
-                            isCheck(NOT_ONLY_CHARACTER_PATTERN, failModel1)
+                            isCheck(
+                                    NOT_ONLY_CHARACTER_PATTERN,
+                                    failModel1
+                            )
                     );
                     assertFalse(
-                            isCheck(NOT_ONLY_CHARACTER_PATTERN, failModel2)
+                            isCheck(
+                                    NOT_ONLY_CHARACTER_PATTERN,
+                                    failModel2
+                            )
                     );
                 }
         );
@@ -85,22 +114,40 @@ public class BasicCharacterPatternTests {
         assertAll(
                 () -> {
                     assertTrue(
-                            isCheck(ONLY_NUMBER_PATTERN, successModel1)
+                            isCheck(
+                                    ONLY_NUMBER_PATTERN,
+                                    successModel1
+                            )
                     );
                     assertFalse(
-                            isCheck(ONLY_NUMBER_PATTERN, failModel1)
+                            isCheck(
+                                    ONLY_NUMBER_PATTERN,
+                                    failModel1
+                            )
                     );
                     assertFalse(
-                            isCheck(ONLY_NUMBER_PATTERN, failModel2)
+                            isCheck(
+                                    ONLY_NUMBER_PATTERN,
+                                    failModel2
+                            )
                     );
                     assertFalse(
-                            isCheck(ONLY_NUMBER_PATTERN, failModel3)
+                            isCheck(
+                                    ONLY_NUMBER_PATTERN,
+                                    failModel3
+                            )
                     );
                     assertFalse(
-                            isCheck(ONLY_NUMBER_PATTERN, failModel4)
+                            isCheck(
+                                    ONLY_NUMBER_PATTERN,
+                                    failModel4
+                            )
                     );
                     assertFalse(
-                            isCheck(ONLY_NUMBER_PATTERN, failModel5)
+                            isCheck(
+                                    ONLY_NUMBER_PATTERN,
+                                    failModel5
+                            )
                     );
                 }
         );
@@ -120,22 +167,40 @@ public class BasicCharacterPatternTests {
         assertAll(
                 () -> {
                     assertTrue(
-                            isCheck(NOT_ONLY_NUMBER_PATTERN, successModel1)
+                            isCheck(
+                                    NOT_ONLY_NUMBER_PATTERN,
+                                    successModel1
+                            )
                     );
                     assertTrue(
-                            isCheck(NOT_ONLY_NUMBER_PATTERN, successModel2)
+                            isCheck(
+                                    NOT_ONLY_NUMBER_PATTERN,
+                                    successModel2
+                            )
                     );
                     assertTrue(
-                            isCheck(NOT_ONLY_NUMBER_PATTERN, successModel3)
+                            isCheck(
+                                    NOT_ONLY_NUMBER_PATTERN,
+                                    successModel3
+                            )
                     );
                     assertFalse(
-                            isCheck(NOT_ONLY_NUMBER_PATTERN, failModel1)
+                            isCheck(
+                                    NOT_ONLY_NUMBER_PATTERN,
+                                    failModel1
+                            )
                     );
                     assertFalse(
-                            isCheck(NOT_ONLY_NUMBER_PATTERN, failModel2)
+                            isCheck(
+                                    NOT_ONLY_NUMBER_PATTERN,
+                                    failModel2
+                            )
                     );
                     assertFalse(
-                            isCheck(NOT_ONLY_NUMBER_PATTERN, failModel3)
+                            isCheck(
+                                    NOT_ONLY_NUMBER_PATTERN,
+                                    failModel3
+                            )
                     );
                 }
         );
@@ -154,19 +219,34 @@ public class BasicCharacterPatternTests {
         assertAll(
                 () -> {
                     assertTrue(
-                            isCheck(ONLY_SPACE_PATTERN, successModel1)
+                            isCheck(
+                                    ONLY_SPACE_PATTERN,
+                                    successModel1
+                            )
                     );
                     assertTrue(
-                            isCheck(ONLY_SPACE_PATTERN, successModel2)
+                            isCheck(
+                                    ONLY_SPACE_PATTERN,
+                                    successModel2
+                            )
                     );
                     assertFalse(
-                            isCheck(ONLY_SPACE_PATTERN, failModel1)
+                            isCheck(
+                                    ONLY_SPACE_PATTERN,
+                                    failModel1
+                            )
                     );
                     assertFalse(
-                            isCheck(ONLY_SPACE_PATTERN, failModel2)
+                            isCheck(
+                                    ONLY_SPACE_PATTERN,
+                                    failModel2
+                            )
                     );
                     assertFalse(
-                            isCheck(ONLY_SPACE_PATTERN, failModel3)
+                            isCheck(
+                                    ONLY_SPACE_PATTERN,
+                                    failModel3
+                            )
                     );
                 }
         );
@@ -185,23 +265,37 @@ public class BasicCharacterPatternTests {
         assertAll(
                 () -> {
                     assertTrue(
-                            isCheck(NOT_ONLY_SPACE_PATTERN, successModel1)
+                            isCheck(
+                                    NOT_ONLY_SPACE_PATTERN,
+                                    successModel1
+                            )
                     );
                     assertTrue(
-                            isCheck(NOT_ONLY_SPACE_PATTERN, successModel2)
+                            isCheck(
+                                    NOT_ONLY_SPACE_PATTERN,
+                                    successModel2
+                            )
                     );
                     assertTrue(
-                            isCheck(NOT_ONLY_SPACE_PATTERN, successModel3)
+                            isCheck(
+                                    NOT_ONLY_SPACE_PATTERN,
+                                    successModel3
+                            )
                     );
                     assertFalse(
-                            isCheck(NOT_ONLY_SPACE_PATTERN, failModel1)
+                            isCheck(
+                                    NOT_ONLY_SPACE_PATTERN,
+                                    failModel1
+                            )
                     );
                     assertFalse(
-                            isCheck(NOT_ONLY_SPACE_PATTERN, failModel2)
+                            isCheck(
+                                    NOT_ONLY_SPACE_PATTERN,
+                                    failModel2
+                            )
                     );
                 }
         );
 
     }
-
 }
