@@ -10,7 +10,7 @@ public abstract class TestBaseRegexUtils {
 
         return sb.append("^")
                 .append(pattern)
-                .append("*")
+                .append("+")
                 .append("$")
                 .toString();
     }
