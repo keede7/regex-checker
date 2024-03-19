@@ -1,15 +1,15 @@
 package io.keede7.pattern.model;
 
-import io.keede7.util.config.TestBaseRegexUtils;
+import io.keede7.util.config.BaseRegexUtils;
 
 import java.util.function.Function;
 import java.util.regex.Pattern;
 
 /**
  * @author keede
- * Created on 2024/03/18
+ * Created on 2024/03/19
  */
-public final class SignupPatternTestModel extends TestBaseRegexUtils {
+public final class SignupPattern extends BaseRegexUtils {
 
     public static final Pattern EMAIL_PATTERN = Pattern.compile(combine(SignupPatternExpression.EMAIL));
     public static final Function<int[], Pattern> USER_ID_PATTERN_FUNCTION =
