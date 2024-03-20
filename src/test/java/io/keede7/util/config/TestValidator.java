@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
  */
 @DisplayNameGeneration(value = DisplayNameGenerator.ReplaceUnderscores.class)
 public abstract class TestValidator {
-    protected boolean isCheck(
+    protected static boolean isCheck(
             Pattern pattern,
             String input
     ) {
