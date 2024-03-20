@@ -5,6 +5,7 @@ package io.keede7.util.config;
  * Created on 2024/03/15
  */
 public abstract class TestBaseRegexUtils {
+
     protected static String combine(String pattern) {
         StringBuilder sb = new StringBuilder();
 

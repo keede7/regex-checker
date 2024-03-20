@@ -1,6 +1,6 @@
 package io.keede7.util;
 
-import io.keede7.util.config.BaseRegexUtils;
+import io.keede7.util.config.Validator;
 
 import static io.keede7.pattern.model.BasicCharacterPattern.*;
 
@@ -9,7 +9,7 @@ import static io.keede7.pattern.model.BasicCharacterPattern.*;
  * @author keede
  * Created on 2024/03/15
  */
-public final class BasicRegexUtil extends BaseRegexUtils {
+public final class BasicRegexUtil extends Validator {
 
     /**
      * This function only passes characters,
