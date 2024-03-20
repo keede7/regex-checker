@@ -134,4 +134,52 @@ class SignupPatternTestModelTests extends TestValidator {
                 )
         );
     }
+
+    @Test
+    void phonePatternSuccessTest() {
+
+        final String model1 = "010-2929-3833";
+        final String model2 = "01029293833";
+        final String model3 = "0192298333";
+
+        assertAll(
+                () -> assertTrue(
+                        isCheck(PHONE_PATTERN, model1)
+                ),
+                () -> assertTrue(
+                        isCheck(PHONE_PATTERN, model2)
+                ),
+                () -> assertTrue(
+                        isCheck(PHONE_PATTERN, model3)
+                )
+        );
+    }
+
+    @Test
+    void phonePatternFailTest() {
+
+        final String model1 = "010.2929.3833";
+        final String model2 = "019293833";
+        final String model3 = "01r2249833";
+        final String model4 = "010229283$3";
+        final String model5 = "0102%928333";
+
+        assertAll(
+                () -> assertFalse(
+                        isCheck(PHONE_PATTERN, model1)
+                ),
+                () -> assertFalse(
+                        isCheck(PHONE_PATTERN, model2)
+                ),
+                () -> assertFalse(
+                        isCheck(PHONE_PATTERN, model3)
+                ),
+                () -> assertFalse(
+                        isCheck(PHONE_PATTERN, model4)
+                ),
+                () -> assertFalse(
+                        isCheck(PHONE_PATTERN, model5)
+                )
+        );
+    }
 }

@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
 public final class SignupPatternTestModel extends TestBaseRegexUtils {
 
     public static final Pattern EMAIL_PATTERN = Pattern.compile(combine(SignupPatternExpression.EMAIL));
+    public static final Pattern PHONE_PATTERN = Pattern.compile(combine(SignupPatternExpression.PHONE));
     public static final Function<int[], Pattern> USER_ID_PATTERN_FUNCTION =
             range -> Pattern.compile(combineWithLength(range));
 
@@ -30,6 +31,7 @@ public final class SignupPatternTestModel extends TestBaseRegexUtils {
     private static final class SignupPatternExpression {
         public static final String EMAIL = "[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-z]";
         public static final String USER_ID = "[a-zA-Z0-9]";
+        public static final String PHONE = "01[016789]-?([0-9]{3,4})-?([0-9]{4})";
     }
 
 }
