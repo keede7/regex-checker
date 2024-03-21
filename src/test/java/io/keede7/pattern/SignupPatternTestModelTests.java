@@ -190,4 +190,64 @@ class SignupPatternTestModelTests extends TestValidator {
             );
         }
     }
+
+    @Nested
+    class PasswordPattern {
+
+        final Pattern userIdPattern = PASSWORD_PATTERN_FUNCTION.apply(new int[]{8, 16});
+
+        @Test
+        void success() {
+            final String model1 = "9@3!$#@as2";
+            final String model2 = "@1a!$#@as2";
+            final String model3 = "@1A!$#@@#$";
+
+            assertAll(
+                    () -> assertTrue(
+                            isCheck(userIdPattern, model1)
+                    ),
+                    () -> assertTrue(
+                            isCheck(userIdPattern, model2)
+                    ),
+                    () -> assertTrue(
+                            isCheck(userIdPattern, model3)
+                    )
+            );
+        }
+
+        @Test
+        void fail() {
+            final String model1 = "12#@aa";
+            final String model2 = "11114444aaaa%%%%%";
+            final String model3 = "testtest1212";
+            final String model4 = "12123434%$%$";
+            final String model5 = "testtest%$%$";
+            final String model6 = "AASSFGGDS%$%$";
+            final String model7 = "AASSFGGDS1212";
+
+            assertAll(
+                    () -> assertFalse(
+                            isCheck(userIdPattern, model1)
+                    ),
+                    () -> assertFalse(
+                            isCheck(userIdPattern, model2)
+                    ),
+                    () -> assertFalse(
+                            isCheck(userIdPattern, model3)
+                    ),
+                    () -> assertFalse(
+                            isCheck(userIdPattern, model4)
+                    ),
+                    () -> assertFalse(
+                            isCheck(userIdPattern, model5)
+                    ),
+                    () -> assertFalse(
+                            isCheck(userIdPattern, model6)
+                    ),
+                    () -> assertFalse(
+                            isCheck(userIdPattern, model7)
+                    )
+            );
+        }
+    }
 }

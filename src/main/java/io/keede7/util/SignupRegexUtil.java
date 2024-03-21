@@ -47,4 +47,15 @@ public final class SignupRegexUtil extends Validator {
         return isCheck(PHONE_PATTERN, input);
     }
 
+    /**
+     *
+     * @param input
+     * @param range
+     * @return
+     */
+    public static boolean checkPassword(String input, int... range) {
+        Pattern pattern = PASSWORD_PATTERN_FUNCTION.apply(range);
+        return isCheck(pattern, input);
+    }
+
 }
