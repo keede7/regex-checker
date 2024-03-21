@@ -48,7 +48,8 @@ public final class SignupRegexUtil extends Validator {
     }
 
     /**
-     *
+     * This function checks the password.
+     * It is a pattern that contains at least one letter, number, or special character, and the length can be specified directly.
      * @param input
      * @param range
      * @return
