@@ -17,6 +17,8 @@ public final class SignupPatternTestModel extends TestBaseRegexUtils {
             range -> Pattern.compile(combineWithLength(SignupPatternExpression.PASSWORD, range));
     public static final Function<int[], Pattern> USER_ID_PATTERN_FUNCTION =
             range -> Pattern.compile(combineWithLength(SignupPatternExpression.USER_ID, range));
+    public static final Function<int[], Pattern> NICKNAME_PATTERN_FUNCTION =
+            range -> Pattern.compile(combineWithLength(SignupPatternExpression.NICKNAME, range));
 
     private static final int MIN_LENGTH = 2;
 
@@ -35,6 +37,7 @@ public final class SignupPatternTestModel extends TestBaseRegexUtils {
         public static final String USER_ID = "[a-zA-Z0-9]";
         public static final String PHONE = "01[016789]-?([0-9]{3,4})-?([0-9]{4})";
         public static final String PASSWORD = "(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+])[A-Za-z0-9!@#$%^&*()_+]";
+        public static final String NICKNAME = "[a-zA-Z0-9 ]";
     }
 
 }

@@ -1,5 +1,6 @@
 package io.keede7.pattern;
 
+import io.keede7.pattern.model.SignupPatternTestModel;
 import io.keede7.util.config.TestValidator;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -250,4 +251,69 @@ class SignupPatternTestModelTests extends TestValidator {
             );
         }
     }
+
+    @Nested
+    class NicknamePattern {
+
+        final Pattern nicknamePattern  = NICKNAME_PATTERN_FUNCTION.apply(new int[]{4, 12});
+
+        @Test
+        void success() {
+            final String model1 = "test ";
+            final String model2 = "test test";
+            final String model3 = "209323";
+            final String model4 = "239test";
+            final String model5 = " 239 test ";
+
+            assertAll(
+                    () -> assertTrue(
+                            isCheck(nicknamePattern, model1.trim())
+                    ),
+                    () -> assertTrue(
+                            isCheck(nicknamePattern, model2.trim())
+                    ),
+                    () -> assertTrue(
+                            isCheck(nicknamePattern, model3.trim())
+                    ),
+                    () -> assertTrue(
+                            isCheck(nicknamePattern, model4.trim())
+                    ),
+                    () -> assertTrue(
+                            isCheck(nicknamePattern, model5.trim())
+                    )
+            );
+        }
+
+        @Test
+        void fail() {
+            final String model1 = "test#@";
+            final String model2 = "4324##";
+            final String model3 = "%#$@%#$";
+            final String model4 = "232";
+            final String model5 = " 232 ";
+            final String model6 = "3203929310222";
+
+            assertAll(
+                    () -> assertFalse(
+                            isCheck(nicknamePattern, model1.trim())
+                    ),
+                    () -> assertFalse(
+                            isCheck(nicknamePattern, model2.trim())
+                    ),
+                    () -> assertFalse(
+                            isCheck(nicknamePattern, model3.trim())
+                    ),
+                    () -> assertFalse(
+                            isCheck(nicknamePattern, model4.trim())
+                    ),
+                    () -> assertFalse(
+                            isCheck(nicknamePattern, model5.trim())
+                    ),
+                    () -> assertFalse(
+                            isCheck(nicknamePattern, model6.trim())
+                    )
+            );
+        }
+    }
+
 }
