@@ -20,6 +20,11 @@ jobs:
             echo "::set-output name=skip::true"
           fi
 
+      - name: Set up Git
+        run: |
+          git config --local user.email "wesaq11@gmail.com"
+          git config --local user.name "keede"
+
       - name: Create and Push Tag
         run: |
           VERSION=${{ github.head_ref }}
