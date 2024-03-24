@@ -59,4 +59,15 @@ public final class SignupRegexUtil extends Validator {
         return isCheck(pattern, input);
     }
 
+    /**
+     * This is the function to change your nickname. Users can limit the length they wish to provide.
+     * @param input
+     * @param range
+     * @return
+     */
+    public static boolean checkNickname(String input, int... range) {
+        Pattern pattern = NICKNAME_PATTERN_FUNCTION.apply(range);
+        return isCheck(pattern, input);
+    }
+
 }
