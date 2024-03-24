@@ -1,0 +1,27 @@
+name: Create Release Tag with to merge main branch
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  release-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check branch name pattern for PRs
+        if: ${{ github.event_name == 'pull_request' }}
+        id: check_branch_pattern
+        run: |
+          BRANCH_PATTERN="^[0-9]+.[0-9]+.[0-9]+$" # x.x.x format
+          PR_BRANCH_NAME=$(jq --raw-output .pull_request.head.ref $GITHUB_EVENT_PATH)
+          if [[ ! $PR_BRANCH_NAME =~ $BRANCH_PATTERN ]]; then
+            echo "::set-output name=skip::true"
+          fi
+
+      - name: Create and Push Tag
+        run: |
+          VERSION=${{ github.head_ref }}
+          git tag -a $VERSION -m "Release $VERSION"
+          git push origin $VERSION
