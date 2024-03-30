@@ -316,4 +316,127 @@ class SignupPatternTestModelTests extends TestValidator {
         }
     }
 
+    @Nested
+    class BirthdayPrefixPattern {
+
+        @Test
+        void success() {
+            final String model1 = "951006";
+
+            assertAll(
+                    () -> assertTrue(
+                            isCheck(BIRTHDAY_PREFIX_PATTERN, model1)
+                    )
+            );
+        }
+
+        @Test
+        void fail() {
+            final String model1 = "95100";
+            final String model2 = "95100A";
+            final String model3 = "95100r";
+            final String model4 = "95100 ";
+            final String model5 = "95100$";
+            final String model6 = "95100가";
+            final String model7 = "95100ㄱ";
+
+            assertAll(
+                    () -> assertFalse(
+                            isCheck(BIRTHDAY_PREFIX_PATTERN, model1)
+                    ),
+                    () -> assertFalse(
+                            isCheck(BIRTHDAY_PREFIX_PATTERN, model2)
+                    ),
+                    () -> assertFalse(
+                            isCheck(BIRTHDAY_PREFIX_PATTERN, model3)
+                    ),
+                    () -> assertFalse(
+                            isCheck(BIRTHDAY_PREFIX_PATTERN, model4)
+                    ),
+                    () -> assertFalse(
+                            isCheck(BIRTHDAY_PREFIX_PATTERN, model5)
+                    ),
+                    () -> assertFalse(
+                            isCheck(BIRTHDAY_PREFIX_PATTERN, model6)
+                    ),
+                    () -> assertFalse(
+                            isCheck(BIRTHDAY_PREFIX_PATTERN, model7)
+                    )
+            );
+        }
+    }
+
+    @Nested
+    class BirthdaySuffixPattern {
+
+        @Test
+        void success() {
+            final String model1 = "1020304";
+            final String model2 = "2020304";
+            final String model3 = "3020304";
+            final String model4 = "4020304";
+
+            assertAll(
+                    () -> assertTrue(
+                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model1)
+                    ),
+                    () -> assertTrue(
+                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model2)
+                    ),
+                    () -> assertTrue(
+                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model3)
+                    ),
+                    () -> assertTrue(
+                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model4)
+                    )
+            );
+        }
+
+        @Test
+        void fail() {
+            final String model1 = "5102030";
+            final String model2 = "510203";
+            final String model3 = "a202030";
+            final String model4 = "R394933";
+            final String model5 = "#922399";
+            final String model6 = "2@39494";
+            final String model7 = "2d40404";
+            final String model8 = "2R40404";
+            final String model9 = "2ㄱ40404";
+            final String model10 = "2가40404";
+
+            assertAll(
+                    () -> assertFalse(
+                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model1)
+                    ),
+                    () -> assertFalse(
+                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model2)
+                    ),
+                    () -> assertFalse(
+                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model3)
+                    ),
+                    () -> assertFalse(
+                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model4)
+                    ),
+                    () -> assertFalse(
+                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model5)
+                    ),
+                    () -> assertFalse(
+                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model6)
+                    ),
+                    () -> assertFalse(
+                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model7)
+                    ),
+                    () -> assertFalse(
+                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model8)
+                    ),
+                    () -> assertFalse(
+                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model9)
+                    ),
+                    () -> assertFalse(
+                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model10)
+                    )
+            );
+        }
+    }
 }
