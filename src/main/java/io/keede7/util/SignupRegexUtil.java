@@ -70,4 +70,24 @@ public final class SignupRegexUtil extends Validator {
         return isCheck(pattern, input);
     }
 
+    /**
+     * This feature checks the first digits of your date of birth.
+     * <p>
+     * The basic format is 6 digits (xxxxxx)
+     * @param input
+     * @return
+     */
+    public static boolean checkBirthdayPrefix(String input) {
+        return isCheck(BIRTHDAY_PREFIX_PATTERN, input);
+    }
+
+    /**
+     * This feature checks the last digits of your date of birth.
+     * @param input
+     * @return
+     */
+    public static boolean checkBirthdaySuffix(String input) {
+        return isCheck(BIRTHDAY_SUFFIX_PATTERN, input);
+    }
+
 }
