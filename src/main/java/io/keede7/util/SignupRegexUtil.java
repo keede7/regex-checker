@@ -71,23 +71,23 @@ public final class SignupRegexUtil extends Validator {
     }
 
     /**
-     * This feature checks the first digits of your date of birth.
+     * This feature checks the first digits of your Registration Card
      * <p>
      * The basic format is 6 digits (xxxxxx)
      * @param input
      * @return
      */
-    public static boolean checkBirthdayPrefix(String input) {
-        return isCheck(BIRTHDAY_PREFIX_PATTERN, input);
+    public static boolean checkRegistrationCardPrefix(String input) {
+        return isCheck(REGISTRATION_CARD_PREFIX_PATTERN, input);
     }
 
     /**
-     * This feature checks the last digits of your date of birth.
+     * This feature checks the last digits of your Registration Card
      * @param input
      * @return
      */
-    public static boolean checkBirthdaySuffix(String input) {
-        return isCheck(BIRTHDAY_SUFFIX_PATTERN, input);
+    public static boolean checkRegistrationCardSuffix(String input) {
+        return isCheck(REGISTRATION_CARD_SUFFIX_PATTERN, input);
     }
 
 }

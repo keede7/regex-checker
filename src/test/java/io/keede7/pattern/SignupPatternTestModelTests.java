@@ -1,6 +1,5 @@
 package io.keede7.pattern;
 
-import io.keede7.pattern.model.SignupPatternTestModel;
 import io.keede7.util.config.TestValidator;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -325,7 +324,7 @@ class SignupPatternTestModelTests extends TestValidator {
 
             assertAll(
                     () -> assertTrue(
-                            isCheck(BIRTHDAY_PREFIX_PATTERN, model1)
+                            isCheck(REGISTRATION_CARD_PREFIX_PATTERN, model1)
                     )
             );
         }
@@ -342,25 +341,25 @@ class SignupPatternTestModelTests extends TestValidator {
 
             assertAll(
                     () -> assertFalse(
-                            isCheck(BIRTHDAY_PREFIX_PATTERN, model1)
+                            isCheck(REGISTRATION_CARD_PREFIX_PATTERN, model1)
                     ),
                     () -> assertFalse(
-                            isCheck(BIRTHDAY_PREFIX_PATTERN, model2)
+                            isCheck(REGISTRATION_CARD_PREFIX_PATTERN, model2)
                     ),
                     () -> assertFalse(
-                            isCheck(BIRTHDAY_PREFIX_PATTERN, model3)
+                            isCheck(REGISTRATION_CARD_PREFIX_PATTERN, model3)
                     ),
                     () -> assertFalse(
-                            isCheck(BIRTHDAY_PREFIX_PATTERN, model4)
+                            isCheck(REGISTRATION_CARD_PREFIX_PATTERN, model4)
                     ),
                     () -> assertFalse(
-                            isCheck(BIRTHDAY_PREFIX_PATTERN, model5)
+                            isCheck(REGISTRATION_CARD_PREFIX_PATTERN, model5)
                     ),
                     () -> assertFalse(
-                            isCheck(BIRTHDAY_PREFIX_PATTERN, model6)
+                            isCheck(REGISTRATION_CARD_PREFIX_PATTERN, model6)
                     ),
                     () -> assertFalse(
-                            isCheck(BIRTHDAY_PREFIX_PATTERN, model7)
+                            isCheck(REGISTRATION_CARD_PREFIX_PATTERN, model7)
                     )
             );
         }
@@ -378,16 +377,16 @@ class SignupPatternTestModelTests extends TestValidator {
 
             assertAll(
                     () -> assertTrue(
-                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model1)
+                            isCheck(REGISTRATION_CARD_SUFFIX_PATTERN, model1)
                     ),
                     () -> assertTrue(
-                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model2)
+                            isCheck(REGISTRATION_CARD_SUFFIX_PATTERN, model2)
                     ),
                     () -> assertTrue(
-                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model3)
+                            isCheck(REGISTRATION_CARD_SUFFIX_PATTERN, model3)
                     ),
                     () -> assertTrue(
-                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model4)
+                            isCheck(REGISTRATION_CARD_SUFFIX_PATTERN, model4)
                     )
             );
         }
@@ -407,34 +406,34 @@ class SignupPatternTestModelTests extends TestValidator {
 
             assertAll(
                     () -> assertFalse(
-                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model1)
+                            isCheck(REGISTRATION_CARD_SUFFIX_PATTERN, model1)
                     ),
                     () -> assertFalse(
-                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model2)
+                            isCheck(REGISTRATION_CARD_SUFFIX_PATTERN, model2)
                     ),
                     () -> assertFalse(
-                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model3)
+                            isCheck(REGISTRATION_CARD_SUFFIX_PATTERN, model3)
                     ),
                     () -> assertFalse(
-                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model4)
+                            isCheck(REGISTRATION_CARD_SUFFIX_PATTERN, model4)
                     ),
                     () -> assertFalse(
-                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model5)
+                            isCheck(REGISTRATION_CARD_SUFFIX_PATTERN, model5)
                     ),
                     () -> assertFalse(
-                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model6)
+                            isCheck(REGISTRATION_CARD_SUFFIX_PATTERN, model6)
                     ),
                     () -> assertFalse(
-                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model7)
+                            isCheck(REGISTRATION_CARD_SUFFIX_PATTERN, model7)
                     ),
                     () -> assertFalse(
-                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model8)
+                            isCheck(REGISTRATION_CARD_SUFFIX_PATTERN, model8)
                     ),
                     () -> assertFalse(
-                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model9)
+                            isCheck(REGISTRATION_CARD_SUFFIX_PATTERN, model9)
                     ),
                     () -> assertFalse(
-                            isCheck(BIRTHDAY_SUFFIX_PATTERN, model10)
+                            isCheck(REGISTRATION_CARD_SUFFIX_PATTERN, model10)
                     )
             );
         }

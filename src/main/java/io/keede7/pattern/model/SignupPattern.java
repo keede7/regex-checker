@@ -13,8 +13,12 @@ public final class SignupPattern extends BaseRegexUtils {
 
     public static final Pattern EMAIL_PATTERN = Pattern.compile(combine(SignupPatternExpression.EMAIL));
     public static final Pattern PHONE_PATTERN = Pattern.compile(combine(SignupPatternExpression.PHONE));
-    public static final Pattern BIRTHDAY_PREFIX_PATTERN = Pattern.compile(combine(SignupPatternExpression.BIRTHDAY_PREFIX));
-    public static final Pattern BIRTHDAY_SUFFIX_PATTERN = Pattern.compile(combine(SignupPatternExpression.BIRTHDAY_SUFFIX));
+    public static final Pattern REGISTRATION_CARD_PREFIX_PATTERN = Pattern.compile(
+            combine(SignupPatternExpression.REGISTRATION_CARD_PREFIX)
+    );
+    public static final Pattern REGISTRATION_CARD_SUFFIX_PATTERN = Pattern.compile(
+            combine(SignupPatternExpression.REGISTRATION_CARD_SUFFIX)
+    );
     public static final Function<int[], Pattern> PASSWORD_PATTERN_FUNCTION =
             range -> Pattern.compile(combineWithLength(SignupPatternExpression.PASSWORD, range));
     public static final Function<int[], Pattern> USER_ID_PATTERN_FUNCTION =
@@ -40,8 +44,8 @@ public final class SignupPattern extends BaseRegexUtils {
         public static final String PHONE = "01[016789]-?([0-9]{3,4})-?([0-9]{4})";
         public static final String PASSWORD = "(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+])[A-Za-z0-9!@#$%^&*()_+]";
         public static final String NICKNAME = "[a-zA-Z0-9 ]";
-        public static final String BIRTHDAY_PREFIX = "[0-9]{6}";
-        public static final String BIRTHDAY_SUFFIX = "[1-4]{1}[0-9]{6}";
+        public static final String REGISTRATION_CARD_PREFIX = "[0-9]{6}";
+        public static final String REGISTRATION_CARD_SUFFIX = "[1-4]{1}[0-9]{6}";
     }
 
 }
