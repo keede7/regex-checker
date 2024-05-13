@@ -39,7 +39,7 @@ public final class SignupPattern extends BaseRegexUtils {
     }
 
     private static final class SignupPatternExpression {
-        public static final String EMAIL = "[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-z]";
+        public static final String EMAIL = "[a-zA-Z0-9.]+@[a-zA-Z0-9]+\\.[a-z]";
         public static final String USER_ID = "[a-zA-Z0-9]";
         public static final String PHONE = "01[016789]-?([0-9]{3,4})-?([0-9]{4})";
         public static final String PASSWORD = "(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+])[A-Za-z0-9!@#$%^&*()_+]";
