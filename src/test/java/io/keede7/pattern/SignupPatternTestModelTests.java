@@ -26,6 +26,7 @@ class SignupPatternTestModelTests extends TestValidator {
             final String model3 = "1293821@gmail.com";
             final String model4 = "1@gmail.com";
             final String model5 = "d@gmail.com";
+            final String model6 = "tt.gg@gmail.com";
 
             assertAll(
                     () -> assertTrue(
@@ -42,6 +43,9 @@ class SignupPatternTestModelTests extends TestValidator {
                     ),
                     () -> assertTrue(
                             isCheck(EMAIL_PATTERN, model5)
+                    ),
+                    () -> assertTrue(
+                            isCheck(EMAIL_PATTERN, model6)
                     )
             );
         }
